@@ -30,6 +30,7 @@ echo "→ Installing dependencies"
 pip install -r "${_req_name}"
 
 echo "→ Initializing the template"
+mkdir "${_template_path}"
 cd "${_template_path}"
 git submodule init
 cd "${_root_path}"
