@@ -32,4 +32,5 @@ pip install -r "${_req_name}"
 echo "→ Initializing the template"
 cd "${_template_path}"
 git submodule init
+git checkout master
 cd "${_root_path}"
