@@ -1,4 +1,4 @@
-:title: RFID penetration testing
+:title: RFID hacking
 :author: Alessandro Molari <molari.alessandro@gmail.com> (CeSeNA)
 
 :data-transition-duration: 1000
@@ -9,8 +9,8 @@
 
 ----
 
-RFID penetration testing
-========================
+RFID hacking
+============
 
 *did you ever want to steal your colleague badge?*
 
@@ -19,22 +19,22 @@ RFID penetration testing
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-pentesting/partials/toc.rst
+   /archive/documents/Presentations/rfid-hacking/partials/toc.rst
 
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-pentesting/partials/macrosteps.rst
+   /archive/documents/Presentations/rfid-hacking/partials/macrosteps.rst
 
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-pentesting/partials/theory.rst
+   /archive/documents/Presentations/rfid-hacking/partials/theory.rst
 
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-pentesting/partials/tools.rst
+   /archive/documents/Presentations/rfid-hacking/partials/tools.rst
 
 .. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

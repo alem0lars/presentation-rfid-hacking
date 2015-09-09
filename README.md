@@ -1,6 +1,6 @@
-# RFID penetration testing
+# RFID hacking
 
-Presentation "RFID penetration testing" by Alessandro Molari
+Presentation "RFID hacking" by Alessandro Molari
 
 ## LICENSE
 
