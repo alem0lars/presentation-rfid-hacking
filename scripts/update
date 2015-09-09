@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+_scripts_path=$(dirname $(realpath $0))
+_root_path=$(dirname ${_scripts_path})
+_venv_activate="${_root_path}/.venv/bin/activate"
+_template_path="${_root_path}/template"
+
+
+cd "${_root_path}"
+
+if [[ ! -s "${_venv_activate}" ]]; then
+  echo "Error: ${_venv_activate} not found. " \
+       "Maybe you didn't run the 'init' script?"
+  exit -1
+fi
+
+source "${_venv_activate}"
+
+echo "→ Updating the project from upstream"
+git pull origin upstream
+
+echo "→ Updating the template"
+cd "${_template_path}"
+git submodule update
+cd "${_root_path}"

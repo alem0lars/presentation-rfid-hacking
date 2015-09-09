@@ -1,0 +1,28 @@
+#!/bin/sh
+
+
+_scripts_path=$(dirname $(realpath $0))
+_root_path=$(dirname ${_scripts_path})
+_venv_activate="${_root_path}/.venv/bin/activate"
+_resources_path="${_root_path}/resources"
+_template_path="${_root_path}/template"
+_presentation_main_name="presentation.rst"
+
+
+cd "${_root_path}"
+
+if [[ ! -s "${_venv_activate}" ]]; then
+  echo "Error: ${_venv_activate} not found. " \
+       "Maybe you didn't run the 'init' script?"
+  exit -1
+fi
+source "${_venv_activate}"
+
+echo "→ Generating images from PlantUML diagrams"
+plantuml "${_resources_path}/*.puml"
+
+echo "→ Serving the presentation"
+hovercraft \
+  -a \
+  -t "${_template_path}" \
+  "${_presentation_main_name}"

@@ -1,2 +1,7 @@
-# presentation-skeleton
-Skeleton for creating presentations (with hovercraft)
+# PRESENTATION-NAME
+
+Presentation "PRESENTATION-NAME" by AUTHOR-NAME
+
+## LICENSE
+
+See the [LICENSE](./LICENSE) file.

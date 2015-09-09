@@ -1,0 +1,35 @@
+#!/bin/sh
+
+
+_scripts_path=$(dirname $(realpath $0))
+_root_path=$(dirname ${_scripts_path})
+_venv_path="${_root_path}/.venv"
+_template_path="${_root_path}/template"
+_venv_activate="${_root_path}/.venv/bin/activate"
+_req_name="requirements.txt"
+
+
+cd "${_root_path}"
+
+echo "→ Fixing git stuff"
+git remote rename origin upstream
+
+echo "→ Initializing the python virtual environment in '${_venv_path}'"
+if [[ -d "${_venv_path}" ]]; then
+  rm -R "${_venv_path}"
+fi
+virtualenv -p "/usr/bin/python3" ".venv"
+if [[ ! -s "${_venv_activate}" ]]; then
+  echo "Error: ${_venv_activate} initialization failed"
+  exit -1
+fi
+
+source "${_venv_activate}"
+
+echo "→ Installing dependencies"
+pip install -r "${_req_name}"
+
+echo "→ Initializing the template"
+cd "${_template_path}"
+git submodule init
+cd "${_root_path}"
