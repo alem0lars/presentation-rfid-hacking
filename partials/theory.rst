@@ -31,30 +31,32 @@ legacy ``125KHz`` is still in place at around ``80%`` of devices!
 
 ----
 
-technologies
-============
-
-there are many technologies available:
+cards technologies
+==================
 
 +-------------+-------------+-------------------------------------------------+
 | technology  | years       | notes                                           |
 +=============+=============+=================================================+
-| magstripe   | late 1960s  | - major downside:                               |
-| cards       |             |   strip would prematurely wear out              |
-|             |             | - not really used nowadays                      |
+| magstripe   | late 1960s  | - strip would prematurely wear out              |
+| cards       |             | - not really used nowadays                      |
 +-------------+-------------+-------------------------------------------------+
 | wiegand     | late 1970s  | - used quite frequently nowadays                |
-| cards       |             | - many physical ids use wiegand cards, lol      |
+| cards       |             |                                                 |
 +-------------+-------------+-------------------------------------------------+
-| proximity   |             | - there is a built-in antenna                   |
-| cards       |             |   ⇒ two-side communication is possible :)       |
-|             |             | - but still no memory is available :(           |
+| proximity   |             | - there is a built-in antenna ⇒ two-side        |
+| cards       |             |   communication                                 |
+|             |             | - but still no memory is available              |
 +-------------+-------------+-------------------------------------------------+
 | smart cards | early 2000s | - they have a micro-controller (intelligence)   |
-|             |             |   and some memory                               |
+|             |             | - and some memory (storage)                     |
 +-------------+-------------+-------------------------------------------------+
 
-all of them (except the very first magstripe) use the **wiegand protocol**
+----
+
+cards technologies
+==================
+
+regardless of the card technology, usually the **wiegand protocol** is used
 
 ----
 
@@ -148,7 +150,7 @@ magnetic card
 ------
 
 tracks
-=============
+======
 
 .. image:: resources/wiegand-card-tracks.png
 
@@ -185,11 +187,22 @@ conventions
    - Il risultante codice digitale protocollo Wiegand viene poi inviato ad un
      controllore host per determinare se per sbloccare elettricamente la porta
 
-   The original Wiegand format had one parity bit, 8 bits of facility code, 16 bits of ID code, and a trailing parity bit for a total of 26 bits. The first parity bit is calculated from the first 12 bits of the code and the trailing parity bit from the last 12 bits. However, many inconsistent implementations and extensions to the basic format exist.
+    The original Wiegand format had one parity bit, 8 bits of facility code,
+    16 bits of ID code, and a trailing parity bit for a total of 26 bits.
+    The first parity bit is calculated from the first 12 bits of the code and
+    the trailing parity bit from the last 12 bits. However, many inconsistent
+    implementations and extensions to the basic format exist.
 
-  Many access control system manufacturers adopted Wiegand technology, but were unhappy with the limitations of only 8 bits for site codes (0-255) and 16 bits for card numbers (0-65535), so they designed their own formats with varying complexity of field numbers and lengths and parity checking.
+    Many access control system manufacturers adopted Wiegand technology, but
+    were unhappy with the limitations of only 8 bits for site codes (0-255) and
+    16 bits for card numbers (0-65535), so they designed their own formats with
+    varying complexity of field numbers and lengths and parity checking.
 
-  The physical size limitations of the card dictated that a maximum of 37 Wiegand wire filaments could be placed in a standard credit card, as dictated by CR80 or ISO/IEC 7810 standards, before misreads would affect reliability. Therefore, most Wiegand formats used in physical access control are less than 37 bits in length. 
+    The physical size limitations of the card dictated that a maximum of 37
+    Wiegand wire filaments could be placed in a standard credit card, as
+    dictated by CR80 or ISO/IEC 7810 standards, before misreads would
+    affect reliability. Therefore, most Wiegand formats used in physical access
+    control are less than 37 bits in length.
 
 ----
 
@@ -197,6 +210,24 @@ How a card is read
 ==================
 
 .. image:: resources/how-card-is-read.png
+
+Badge basics - Card elements
+----------------------------
+
+What's written in the badge?
+
+It depends on the badge type.
+
+Typically (almost everyone):
+
+- **Card ID number**: 26-37 bit number
+- **Facility code**: has nothing to do with authentication
+- **Site code** (occasionally)
+
+44 bits are stored in the card but only the card ID number is sent to the
+reader. Typically other bits are padding or useless numbers. You have to see the
+manual / datasheet to check which is the correct format, i.e. which bits of
+44 stored are actually the card ID number and which ones are padding.
 
 ----
 
@@ -207,31 +238,3 @@ typical RFID hacking tools are readers **which act as ``controllers``**, thus
 **also performing the decoding operation**
 
 this is how in general sniffers work: they decode the badges informations
-
-----
-
-
-# ----
-# 
-# Badge types
-# ===========
-# 
-# There are a lot of types..
-# 
-# Badge basics - Card elements
-# ----------------------------
-# 
-# What's written in the badge?
-# 
-# It depends on the badge type.
-# 
-# Typically (almost everyone):
-# 
-# - **Card ID number**: 26-37 bit number
-# - **Facility code**: has nothing to do with authentication
-# - **Site code** (occasionally)
-# 
-# 44 bits are stored in the card but only the card ID number is sent to the
-# reader. Typically other bits are padding or useless numbers. You have to see the
-# manual / datasheet to check which is the correct format, i.e. which bits of
-# 44 stored are actually the card ID number and which ones are padding.

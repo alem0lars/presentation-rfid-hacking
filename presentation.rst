@@ -19,22 +19,22 @@ RFID penetration testing
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-stealing/partials/toc.rst
+   /archive/documents/Presentations/rfid-pentesting/partials/toc.rst
 
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-stealing/partials/macrosteps.rst
+   /archive/documents/Presentations/rfid-pentesting/partials/macrosteps.rst
 
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-stealing/partials/theory.rst
+   /archive/documents/Presentations/rfid-pentesting/partials/theory.rst
 
 ----
 
 .. include::
-   /archive/documents/Presentations/rfid-stealing/partials/tools.rst
+   /archive/documents/Presentations/rfid-pentesting/partials/tools.rst
 
 .. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
