@@ -1,0 +1,9 @@
+@startuml
+
+<- Card   : broadcast card number
+-> Reader : receive data being brodcast
+Reader -> Reader : convert data to <strong>wiegand protocol</strong>. no access decisions are made by thereader
+Reader -> Controller : transmission to the controller of the converted data
+Controller -> Controller : decodes binary card data and makes decision to grant access (or not)
+
+@enduml

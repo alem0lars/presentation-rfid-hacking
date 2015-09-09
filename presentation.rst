@@ -1,6 +1,5 @@
-:title: PRESENTATION-TITLE
-:event: EVENT-NAME
-:author: AUTHOR-NAME <AUTHOR-EMAIL> (COMPANY-OR-GROUP)
+:title: RFID penetration testing
+:author: Alessandro Molari <molari.alessandro@gmail.com> (CeSeNA)
 
 :data-transition-duration: 1000
 :skip-help: true
@@ -10,10 +9,32 @@
 
 ----
 
-PRESENTATION-TITLE
-==================
+RFID penetration testing
+========================
 
-.. TODO: Include partials here or add some slides here for small presentations
+*did you ever want to steal your colleague badge?*
+
+``┌∩┐(◕_◕)┌∩┐``
+
+----
+
+.. include::
+   /archive/documents/Presentations/rfid-stealing/partials/toc.rst
+
+----
+
+.. include::
+   /archive/documents/Presentations/rfid-stealing/partials/macrosteps.rst
+
+----
+
+.. include::
+   /archive/documents/Presentations/rfid-stealing/partials/theory.rst
+
+----
+
+.. include::
+   /archive/documents/Presentations/rfid-stealing/partials/tools.rst
 
 .. ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
