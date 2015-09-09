@@ -18,7 +18,7 @@ fi
 source "${_venv_activate}"
 
 echo "→ Updating the project from upstream"
-git pull origin upstream
+git pull upstream master
 
 echo "→ Updating the template"
 cd "${_template_path}"
