@@ -58,6 +58,10 @@ cards technologies
 
 regardless of the card technology, usually the **wiegand protocol** is used
 
+http://blog.opensecurityresearch.com/2012/12/hacking-wiegand-serial-protocol.html
+https://www.supremainc.com/en/node/754
+http://www.locksmithledger.com/article/12067684/access-card-migration-magstripe-to-smart-card
+
 ----
 
 wiegand-*
